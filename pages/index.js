@@ -2,7 +2,7 @@ import Layout from '@/components/Layout';
 import Grid from '@/components/Grid';
 import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient();
+import { prisma } from '@/lib/prisma';
 
 export async function getServerSideProps() {
   // Get all homes
