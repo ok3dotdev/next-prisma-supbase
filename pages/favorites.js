@@ -34,6 +34,7 @@ import Grid from '@/components/Grid';
 // }
 
 const Favorites = ({ homes = [] }) => {
+  //comment
   return (
     <Layout>
       <h1 className="text-xl font-medium text-gray-800">Your Favourite listings</h1>
