@@ -39,7 +39,7 @@ const ListingForm = ({
       setImageUrl(data?.url);
       toast.success('Successfully uploaded', { id: toastId });
     } catch (e) {
-      console.log("error", e)
+      console.log("error here>>>>", e)
       toast.error('Unable to upload', { id: toastId });
       setImageUrl('');
     } finally {

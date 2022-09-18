@@ -58,7 +58,7 @@ export default async function handler(req, res) {
 
       return res.status(200).json({ url });
     } catch (e) {
-      console.log(e)
+      // console.log("error", e)
       res.status(500).json({ message: 'Something went wrong' });
     }
   }
