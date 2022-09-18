@@ -1,7 +1,6 @@
 import { getSession } from 'next-auth/react';
 import { prisma } from '@/lib/prisma';
-
-
+import { supabase } from '@/lib/supabase';
 
 export default async function handler(req, res) {
 
@@ -38,6 +37,7 @@ export default async function handler(req, res) {
         }
         res.status(200).json(home);
       } catch (e) {
+        console.log(error)
         res.status(500).json({ message: 'Something went wrong' });
       }
     }
