@@ -14,7 +14,7 @@ export async function getServerSideProps() {
   };
 }
 
-
+//Adding Comments
 export default function Home({homes = []}) {
   return (
     <Layout>
