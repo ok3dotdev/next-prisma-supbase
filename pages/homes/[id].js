@@ -125,7 +125,7 @@ const ListedHome = (home = null) => {
                 type="button"
                 disabled={deleting}
                 onClick={deleteHome}
-                className="rounded-md border border-rose-500 text-rose-500 hover:bg-rose-500 hover:text-white focus:outline-none transition disabled:bg-rose-500 disabled:text-white disabled:opacity-50 disabled:cursor-not-allowed px-4 py-1"
+                className="rounded-md border border-green-500 text-green-500 hover:bg-green-500 hover:text-white focus:outline-none transition disabled:bg-green-500 disabled:text-white disabled:opacity-50 disabled:cursor-not-allowed px-4 py-1"
               >
                 {deleting ? 'Deleting...' : 'Delete'}
               </button>

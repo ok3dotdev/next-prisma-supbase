@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Card from '@/components/Card';
+import { Card } from '@/components/Card';
 import { ExclamationIcon } from '@heroicons/react/outline';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const Grid = ({ homes = [] }) => {
+const Grid = ({homes= [], users = []}) => {
   const [favorites, setFavorites] = useState([]);
 
   const isEmpty = homes.length === 0;
@@ -48,7 +48,7 @@ const Grid = ({ homes = [] }) => {
       <span>Unfortunately, there is nothing to display yet.</span>
     </p>
   ) : (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-6">
       {homes.map(home => (
         <Card
           key={home.id}

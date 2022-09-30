@@ -3,7 +3,7 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 import { HeartIcon } from '@heroicons/react/solid';
 
-const Card = ({
+export const Card = ({
   id = '',
   image = '',
   title = '',
@@ -85,4 +85,72 @@ Card.propTypes = {
   onClickFavorite: PropTypes.func,
 };
 
-export default Card;
+export const UserCard = ({
+  id = '',
+  name = '',
+  age = 0,
+  image = '',
+  pronouns = '',
+  bio = '',
+  favorite = false
+
+})=>(
+  <Link href={`/homes/${id}`}>
+    <a className="block w-full">
+      <div className="relative">
+        <div className="bg-gray-200 rounded-lg shadow overflow-hidden aspect-w-16 aspect-h-9">
+          {image ? (
+            <Image
+              src={image}
+              alt={name}
+              layout="fill"
+              objectFit="cover"
+              className="hover:opacity-80 transition"
+            />
+          ) : null}
+        </div>
+        <button
+          type="button"
+          onClick={e => {
+            e.preventDefault();
+            if (typeof onClickFavorite === 'function') {
+              onClickFavorite(id);
+            }
+          }}
+          className="absolute top-2 right-2"
+        >
+          <HeartIcon
+            className={`w-7 h-7 drop-shadow-lg transition ${
+              favorite ? 'text-red-500' : 'text-white'
+            }`}
+          />
+        </button>
+      </div>
+      <div className="mt-2 w-full text-gray-700 font-semibold leading-tight">
+        {name ?? ''}
+      </div>
+      <ol className="mt-1 inline-flex items-center space-x-1 text-gray-500">
+        <li>
+          <span>{age ?? 0} y</span>
+          <span aria-hidden="true"> · </span>
+        </li>
+        <li>
+          <span>{pronouns ?? ''} beds</span>
+          <span aria-hidden="true"> · </span>
+        </li>
+      </ol>
+      <p className="mt-2">
+        <span className="text-gray-500">{bio ?? ''}</span>
+      </p>
+    </a>
+  </Link>
+)
+
+UserCard.propTypes = {
+  name: PropTypes.string,
+  age: PropTypes.number,
+  favorite: PropTypes.bool,
+  pronouns: PropTypes.string,
+  id: PropTypes.number,
+
+}
