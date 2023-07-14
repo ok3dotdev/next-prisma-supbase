@@ -3,8 +3,8 @@
 ### 1. Clone the repository and install dependencies
 
 ```
-git clone https://github.com/AlterClassIO/supa-vacation
-cd supa-vacation
+git clone https://github.com/sickerman/next-prisma-supbase
+cd next-prisma-supbase
 npm install
 ```
 
@@ -33,7 +33,3 @@ To run it in production mode, use:
 npm run build
 npm run start
 ```
-
-## License
-
-[MIT](https://github.com/AlterClassIO/supa-vacation/blob/master/LICENSE)
