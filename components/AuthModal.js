@@ -70,6 +70,7 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
 
   const signInWithEmail = async ({ email }) => {
     let toastId;
+    console.log("email", email);
     try {
       toastId = toast.loading("Loading...");
       setDisabled(true);
@@ -216,7 +217,7 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
                     </button>
 
                     {/* Sign with email */}
-                    <Formik
+                    {/* <Formik
                       initialValues={{ email: "" }}
                       validationSchema={SignInSchema}
                       validateOnBlur={false}
@@ -284,7 +285,7 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
                           />
                         </Form>
                       )}
-                    </Formik>
+                    </Formik> */}
                   </div>
                 </div>
               </div>
